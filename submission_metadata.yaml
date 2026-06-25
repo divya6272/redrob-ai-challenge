@@ -1,0 +1,75 @@
+# Redrob Hackathon — Submission Metadata
+
+# ============================================================================
+# Team identity
+# ============================================================================
+team_name: "Divya Ramnani"
+
+primary_contact:
+  name: "Divya Ramnani"
+  email: "dramnani02@gmail.com"
+  phone: "+91-7722839809"
+
+team_members:
+  - name: "Divya Ramnani"
+    email: "dramnani02@gmail.com"
+    role: "ML Engineer"
+
+# ============================================================================
+# Code and reproducibility
+# ============================================================================
+github_repo: "https://github.com/divya6272/redrob-ai-challenge"
+
+sandbox_link: "https://redrob-ai-challengegit-rqvgca8znthcgdzlwufxex.streamlit.app/"
+
+reproduce_command: "python rank.py --candidates ./candidates.jsonl --out ./submission.csv"
+
+# ============================================================================
+# Compute environment
+# ============================================================================
+compute:
+  platform: "Local Machine"
+  cpu_cores: 8
+  ram_gb: 16
+  python_version: "3.10"
+  os: "Windows 11"
+  uses_gpu_for_inference: false
+  has_network_during_ranking: false
+  pre_computation_required: false
+  pre_computation_time_minutes: 0
+
+# ============================================================================
+# AI tools declaration
+# ============================================================================
+ai_tools_used:
+  - "Claude"
+
+ai_usage_summary: |
+  Used Claude for architectural discussion and code review.
+  No candidate data was fed to any LLM.
+  All ranking logic is rule-based and runs fully offline with zero API calls.
+
+# ============================================================================
+# Approach summary
+# ============================================================================
+methodology_summary: |
+  Multi-signal candidate ranker built in pure Python with no external dependencies.
+  Four scoring dimensions: skills match (40%), career quality (30%), behavioral
+  signals (20%), and a red flag multiplier. Skills are matched against a curated
+  list of JD requirements (embeddings, vector DBs, LLMs, Python) weighted by
+  proficiency level, usage duration, and Redrob assessment scores. Career quality
+  rewards product company AI/ML experience and penalises consulting-only backgrounds
+  as stated in the JD. Behavioral signals down-weight candidates who are inactive,
+  unresponsive, or unwilling to relocate. A honeypot detection step filters
+  candidates with impossible profiles. Runtime is ~35 seconds for 100K candidates
+  on CPU with zero network calls.
+
+# ============================================================================
+# Declarations
+# ============================================================================
+declarations:
+  read_submission_spec: true
+  code_is_original_work: true
+  no_collusion: true
+  honeypot_check_done: true
+  reproduction_tested: true
