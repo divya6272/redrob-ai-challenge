@@ -20,7 +20,7 @@ team_members:
 # ============================================================================
 github_repo: "https://github.com/divya6272/redrob-ai-challenge"
 
-sandbox_link: "https://redrob-ai-challengegit-rqvgca8znthcgdzlwufxex.streamlit.app/"
+sandbox_link: "https://redrob-ai-challenge-bhs7fwxzwiiewpffqgunxv.streamlit.app/"
 
 reproduce_command: "python rank.py --candidates ./candidates.jsonl --out ./submission.csv"
 
